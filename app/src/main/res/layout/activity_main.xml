@@ -23,18 +23,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/article_heading">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/article_subheading"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/column_width_subheading"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_regular"
                 android:text="@string/article_subtitle"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault">
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                android:textStyle="bold">
 
             </TextView>
 
@@ -46,17 +47,20 @@
                 android:autoLink="web"
                 android:lineSpacingExtra="@dimen/line_spacing"
                 android:padding="@dimen/padding_regular"
-                android:text="@string/article_text">
+                android:text="@string/article_text"
+                android:layout_toEndOf="@id/article_subheading">
 
             </TextView>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/button_label_comment">
+                android:text="@string/button_label_comment"
+                android:layout_alignStart="@id/article"
+                android:layout_below="@id/article">
 
             </Button>
-        </LinearLayout>
+        </RelativeLayout>
 
     </ScrollView>
 </RelativeLayout>
